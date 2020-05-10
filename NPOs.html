@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Presentation Ninja</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yihui Xie" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/chocolate.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/chocolate-fonts.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+    <script src="libs/viz-1.8.2/viz.js"></script>
+    <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding-1.0.5/grViz.js"></script>
+    <script src="libs/d3-3.3.8/d3.min.js"></script>
+    <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+    <link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+    <script src="libs/mermaid-0.3.0/dist/mermaid.js"></script>
+    <script src="libs/chromatography-0.1/chromatography.js"></script>
+    <script src="libs/DiagrammeR-binding-1.0.5/DiagrammeR.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Presentation Ninja
+## ⚔<br/>with xaringan
+### Yihui Xie
+### RStudio, PBC
+### 2016/12/12 (updated: 2020-05-10)
+
+---
+
+
+
+class: inverse, center, middle
+
+# Introduction to NonProfit Organizations
+
+---
+
+### Introduction to Nonprofit Organizations 
+-------------------------------------------
+
+&lt;center&gt;
+
+<div id="htmlwidget-2f74848edfe47d7a17ec" style="width:504px;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2f74848edfe47d7a17ec">{"x":{"diagram":"\ndigraph boxes_and_circles  {\n\ngraph [overlap = true]\n\nnode [shape = box,\n      style = filled,\n      color = grey, \n      fixedsize = true, \n      width = 0.9, \n      height = 0.6, \n      fontsize = 15]\n\n\nnode [fillcolor = DarkTurquoise, label = \"Society\"]\nSociety\n\nnode [fillcolor = DarkTurquoise, label = \"Public\"]\nPublic\n\nnode [fillcolor = DarkTurquoise, label = \"Corporate\"]\nCorporate\n\nnode [fillcolor = MediumSpringGreen, label = \"Nonprofit\"]\nNonprofit\n\nedge [color = grey]\nSociety -> Public \nSociety -> Corporate\nSociety -> Nonprofit \n\n\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+### Introduction to Nonprofit Organizations
+-------------------------------------------
+
+&lt;center&gt; 
+
+
+<div id="htmlwidget-6c0f3ec8538467105cd6" style="width:504px;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6c0f3ec8538467105cd6">{"x":{"diagram":"\ndigraph boxes_and_circles  {\n\ngraph [overlap = true]\n\nnode [shape = box,\n      style = filled,\n      color = grey, \n      fixedsize = true, \n      width = 0.9, \n      height = 0.6, \n      fontsize = 15]\n\n\nnode [fillcolor = DarkTurquoise, label = \"Society\"]\nSociety\n\nnode [fillcolor = DarkTurquoise, label = \"Public\"]\nPublic\n\nnode [fillcolor = DarkTurquoise, label = \"Corporate\"]\nCorporate\n\nnode [fillcolor = MediumSpringGreen, label = \"Nonprofit\"]\nNonprofit\n\nnode [fillcolor = Honeydew, label = \"NGOs\", \nshape = circle, width = 0.5, height = 0.5, fontsize = 10]\nNGOs\n\nedge [color = grey]\nSociety -> Public \nSociety -> Corporate\nSociety -> Nonprofit \n\nNGOs -> Nonprofit [arrowhead=none, color = MediumSpringGreen]\n\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+
+---
+
+
+### Introduction to Nonprofit Organizations
+-------------------------------------------
+
+&lt;center&gt; 
+
+
+<div id="htmlwidget-d6a14cd18b80ff20fdc7" style="width:504px;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d6a14cd18b80ff20fdc7">{"x":{"diagram":"\ndigraph boxes_and_circles  {\n\ngraph [overlap = true]\n\nnode [shape = circle,\n      style = filled,\n      color = grey, \n      width = 0.1, \n      height = 0.1, \n      fontsize = 2]\n\n\nnode [fillcolor = MediumSpringGreen, label = \"Nonprofit\",\nshape = box, width = 0.3, height = 0.1,  fontsize = 10]\nNonprofit\n\nnode [fillcolor = Honeydew, label = \"NGOs\", shape = plaintext, \nwidth = 0.2, height = 0.1,  fontsize = 10]\nNGOs\n\nnode [fillcolor = Honeydew, label = \"Foundations\", shape = plaintext, \nwidth = 0.2, height = 0.1,  fontsize = 10]\nFoundations\n\nnode [fillcolor = Honeydew, label = \"Associations\", shape = plaintext, \nwidth = 0.2, height = 0.1,  fontsize = 10]\nAssociations\n\nnode [fillcolor = Honeydew, label = \"Unions\", shape = plaintext, \nwidth = 0.2, height = 0.1,  fontsize = 10]\nUnions\n\n\nnode [fillcolor = Honeydew, label = \"Charities\", shape = plaintext, \nwidth = 0.2, height = 0.1,  fontsize = 10]\nCharities\n\nnode [fillcolor = Honeydew, label = \"Social movements\", shape = plaintext, \nwidth = 0.2, height = 0.1,  fontsize = 10]\nSocial_movements\n\n\n\n\n\nedge [color = grey]\n \nNGOs -> Nonprofit [arrowhead=none, color = MediumSpringGreen]\n\nFoundations -> Nonprofit [arrowhead=none, color = MediumSpringGreen]\n\nAssociations -> Nonprofit [arrowhead=none, color = MediumSpringGreen]\n\nNonprofit-> Unions [arrowhead=none, color = MediumSpringGreen]\n\nNonprofit-> Charities  [arrowhead=none, color = MediumSpringGreen]\n\nNonprofit-> Social_movements  [arrowhead=none, color = MediumSpringGreen]\n\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+---
+
+
+### Introduction to Nonprofit Organizations
+-------------------------------------------
+&lt;center&gt;
+
+
+<div id="htmlwidget-00503d670f1bf334e394" style="width:504px;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-00503d670f1bf334e394">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TB]\n  \n  node [shape = rectangle, style = filled]        \n  rec1 [label = \"Nonprofit Sector\", fillcolor = MediumSpringGreen]\n  rec2 [label = \"Prohibition of Profit Distribution\", fillcolor = red]\n  \n  \n  # edge definitions with the node IDs\n  \n  edge [arrowhead = none]\n  \n  rec1 -> rec2 \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+### Introduction to Nonprofit Organizations
+-------------------------------------------
+
+
+&lt;center&gt;
+
+
+
+<div id="htmlwidget-47d002e23abfd8685dd9" style="width:504px;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-47d002e23abfd8685dd9">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TB]\n  \n  node [shape = rectangle, style = filled]        \n  rec1 [label = \"Nonprofit Sector\", fillcolor = MediumSpringGreen]\n  rec2 [label = \"Prohibition of Profit Distribution\", fillcolor = red]\n  rec3 [label = \"Serve a Public Purpose\", fillcolor = Honeydew]\n\n  \n  # edge definitions with the node IDs\n  \n  edge [arrowhead = none]\n  \n  rec1 -> rec2  -> rec3\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+
+### Introduction to Nonprofit Organizations
+-------------------------------------------
+
+
+&lt;center&gt;
+
+
+
+<div id="htmlwidget-478188c39e58680150ae" style="width:504px;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-478188c39e58680150ae">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TB]\n  \n  node [shape = rectangle, style = filled]        \n  rec1 [label = \"Nonprofit Sector\", fillcolor = MediumSpringGreen]\n  rec2 [label = \"Prohibition of Profit Distribution\", fillcolor = Honeydew, shape = oval ]\n  rec3 [label = \"Serve a Public Purpose\", fillcolor = Honeydew, shape = oval]\n  rec4 [label = \"Volunteering\", fillcolor = Honeydew, shape = oval]\n  rec5 [label = \"Private\", fillcolor = Honeydew, shape = oval]\n\n\n\n  \n  # edge definitions with the node IDs\n  \n  edge [arrowhead = none]\n  \n  rec1 -> rec2  -> rec3 -> rec4 -> rec5\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+class: inverse, center, middle
+
+#  NonGovernmental Organisations NGOs
+
+---
+
+### NGOs: Origin of the term 
+https://www.un.org/en/sections/un-charter/chapter-x/index.html
+
+&lt;center&gt; 
+![](https://eaimun.org/wp-content/uploads/2018/09/9289211012835_cover_en.jpg)
+
+
+---
+
+# Definitions 
+
+&lt;strong&gt; 
+
+&gt; Any non-profit, non-violent, organized group of people who do not seek government functions. (Willetts, 1996)
+
+-----------------------------------------------------------------
+&lt;br&gt;
+
+
+&lt;strong&gt;
+&gt; NGOs include a wide variety of groups and institutions that are entirely or largely independent of government, and characterized primarily by humanitarian or cooperative, rather than commercial, objectives. (World Bank, 1989)
+
+------------------------------
+&lt;br&gt;
+&lt;strong&gt; 
+&gt; An NGO is a private, voluntary, not-for-profit organization, supported at least in part by voluntary contributions from the public. (UNDP, 1996)
+
+------------------------------
+
+---
+
+# Characteristics of NGOs
+
++ ### Non-profit oriented
++ ### Government independent 
++ ### Supported by volunteering
++ ### Structured Established organizations (not ephemeral or informal)
++ ### Non-violent
+
+---
+
+
+.pull-left[
+
+![](https://upload.wikimedia.org/wikipedia/en/2/24/WWF_logo.svg)
+
+![](https://static.wixstatic.com/media/de5839_e6ea75f770914f72ab4692eced86c5a2~mv2.png/v1/fit/w_640,h_379,al_c,q_80/file.png)
+
+]
+
+.pull-right[
+
+![](https://workfor.greenpeace.org/app/uploads/2016/10/greenpeace-og.png)![](https://www.redcrossneny.org/wp-content/uploads/2015/07/Redcross.png)
+]
+
+---
+
+
+class: inverse, center, middle
+
+# NGOs Fundraising 
+
+
+---
+
+class: inverse, center, middle
+
+
+# I. Fundraising Principles
+
+
+---
+# What is Fundraising ?
+
+&gt; ## Fundraising is a pocess that aims to collect and distribute wealth in order to have a positive sustainable impact on a public cause. 
+
+
+
+
+---
+
+
+### 1. People Give To People To Help ~~People~~ __causes__
+
+-----------------------------------
+
+  + ### Fundraising is value-based
+
+  + ###Donors will act based on the feelings they have with the final recipient.
+  
+  + ###Donors invest in projects with a positive impact.
+  
+  + ###Institutions do not have needs, causes have -&gt; Mission Statement
+
+--
+
+## The Paradox of Generosity
+
++ ### People feel happier, richer, and healthier after donating time and money to others. 
+
+---
+
+### 2. People Give Relative To Their Means And To What Others Give
+-----------------------------------
+
+ + ### Avoid schemes based on the “average gift.”
+ 
+ + ### Pyramidal Planning ensures that everyone can donate.
+
+
+&lt;center&gt;
+
+![](level_of_gitfs.png)
+
+---
+
+### 3. Those Closest To The Organization Must Set The Pace
+
+--------------------------------------------------------
+
++ ### The leadership begins with the board, the staff and the key volunteers.
+
++ ### As an example:
+
+&lt;center&gt; 
+
+&lt;img src="https://www.gatesfoundation.org/-/media/GFO/Site/Logo-Images/Gates_logo_1200x1200.jpg" width="250"/&gt;
+
+--- 
+
+---
+
+### 3. Those Closest To The Organization Must Set The Pace
+
+--------------------------------------------------------
+
+## The Time-Ask Effect
+
++ ### If people are first asked to give their time to an organization, and only later asked to make a financial donation, they will give more of both (Lio and Aaker, 2008)
+
+--
+
++ ### Thinking about money automatically activates concepts of individualism and self-focus (Vohs, Mead, and Goode, 2006)
+
+
+---
+
+## 4. The Six Rights 
+-----------------------------------------------
+
+### The six rights are the six critical success factors in any fundraising campaign.
+
+
+.pull-left[
+
++ ### Who is the _right_  person that should ask for the contributions?
++ ### Determining the _right_  prospects.
++ ### What is the _right_ amount to request ?
+
+]
+
+.pull-right[
++ ### Choosing the _right_ project.
++ ### Determining the _right_ time.
++ ### What's the _right_ way ?
+
+
+]
+ 
+
+
+---
+
+class: inverse, center, middle
+
+#  Fundraising planning
+
+---
+# Where to Start ? 
+----------------------------
+
+### Organizations with a fundraising plan are likely to raise more money (Nonprofit Research Collaborative, 2014)
+
+---
+
+# Dimensions of Fundraising planning
+-------------------------------------
+
+&lt;center&gt; 
+
+
+<div id="htmlwidget-3ce3846c46a19110149e" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3ce3846c46a19110149e">{"x":{"diagram":"\ngraph TB\n  A(Where are we now ?) --> B(Where do we want to be ?)\n  \n  C --> A\n  \n  B--> C(How to get there ?)\n\n  \n"},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+# Where are we now ? 
+---------------------------------------------------------
+
+&lt;center&gt; 
+
+<div id="htmlwidget-0d2d48dd2535438a957b" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0d2d48dd2535438a957b">{"x":{"diagram":"\ngraph TB\n  A(Where are we now ?) --> B(Mission Statement)\n  \n  A(Where are we now ?) --> C(Vision Statement)\n  \n"},"evals":[],"jsHooks":[]}</script>
+
+---
+
+# The Vision Statement
+
++ ### The Vision is a clear statement of the world the nonprofit wants to see (Sargeant &amp; Shang, 2010). 
+
+
++ ### It must define briefly what success will look like for the organization (Weinstein &amp; Barden, 2017).
+
+
+---
+
+# The Mission Statement
+
++ ##The Mission Statement defines the mechanisms that will allow the organization to make its vision a reality.
+
+ + ###Why does the organization exist ? 
+ + ###Whom does it serve ?
+ + ###What is the geographic range of its work ? 
+
+
+---
+##### Source: https://help.worldwildlife.org/hc/en-us/articles/360007905494-WWF-s-Mission-Vision
+
+.pull-left[
+
+![](https://upload.wikimedia.org/wikipedia/en/2/24/WWF_logo.svg)
+
+]
+
+.pull-right[
+
+##Vision:
++ _"Our vision is to build a future in which people live in harmony with nature. We seek to save a planet, a world of life."_
+
+## Mission:
+
++ _"The mission of World Wildlife Fund is to conserve nature and reduce the most pressing threats to the diversity of life on Earth."_
+
+
+
+]
+
+---
+# The Fundraising Audit 
+-------------------------------------
+
+&lt;center&gt; 
+
+<div id="htmlwidget-7e47ae4bf65dcd221b9d" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7e47ae4bf65dcd221b9d">{"x":{"diagram":"\ngraph TB\n  A(Where are we now ?) --> B(Mission/Vision)\n  \n  A(Where are we now ?) --> C(Fundraising Audit)\n  \n  C --> D> An Analysis of the factors that may impact the fundraising success]\n  \n"},"evals":[],"jsHooks":[]}</script>
+
+---
+
+# The Fundraising Audit 
+-------------------------------------
+## Macro Factors
+
+&lt;center&gt; 
+
+<div id="htmlwidget-a390a110f40ec313f37b" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a390a110f40ec313f37b">{"x":{"diagram":"\ngraph LR\n  A[PEST Analysis] --- B{Political factors} --- C{Economic factors} --- D{Sociocultural factors} --- E{Technological factors}\n"},"evals":[],"jsHooks":[]}</script>
+
+---
+
+background-image: url('geo.png')
+background-size: cover
+
+---
+
+.pull-left[
+
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#mxpqruaegd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#mxpqruaegd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#mxpqruaegd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#mxpqruaegd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#mxpqruaegd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#mxpqruaegd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#mxpqruaegd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#mxpqruaegd .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#mxpqruaegd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#mxpqruaegd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#mxpqruaegd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#mxpqruaegd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#mxpqruaegd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#mxpqruaegd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#mxpqruaegd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mxpqruaegd .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mxpqruaegd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#mxpqruaegd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mxpqruaegd .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#mxpqruaegd .gt_left {
+  text-align: left;
+}
+
+#mxpqruaegd .gt_center {
+  text-align: center;
+}
+
+#mxpqruaegd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#mxpqruaegd .gt_font_normal {
+  font-weight: normal;
+}
+
+#mxpqruaegd .gt_font_bold {
+  font-weight: bold;
+}
+
+#mxpqruaegd .gt_font_italic {
+  font-style: italic;
+}
+
+#mxpqruaegd .gt_super {
+  font-size: 65%;
+}
+
+#mxpqruaegd .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="mxpqruaegd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="2" class="gt_heading gt_title gt_font_normal" style>The highest overall scores</th>
+    </tr>
+    <tr>
+      <th colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>2018 data</th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Country</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Score</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left">FINLAND</td>
+      <td class="gt_row gt_right">4.80</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">NETHERLANDS</td>
+      <td class="gt_row gt_right">4.80</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">UNITED STATES</td>
+      <td class="gt_row gt_right">4.77</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">SWITZERLAND</td>
+      <td class="gt_row gt_right">4.75</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">GERMANY</td>
+      <td class="gt_row gt_right">4.73</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">ITALY</td>
+      <td class="gt_row gt_right">4.67</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">FRANCE</td>
+      <td class="gt_row gt_right">4.67</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">DENMARK</td>
+      <td class="gt_row gt_right">4.42</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">SINGAPORE</td>
+      <td class="gt_row gt_right">4.42</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">AUSTRIA</td>
+      <td class="gt_row gt_right">4.41</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+
+]
+
+.pull-right[
+
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#ubwrxtjckp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ubwrxtjckp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ubwrxtjckp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ubwrxtjckp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ubwrxtjckp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ubwrxtjckp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ubwrxtjckp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ubwrxtjckp .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ubwrxtjckp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ubwrxtjckp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ubwrxtjckp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ubwrxtjckp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ubwrxtjckp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ubwrxtjckp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#ubwrxtjckp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ubwrxtjckp .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ubwrxtjckp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ubwrxtjckp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ubwrxtjckp .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ubwrxtjckp .gt_left {
+  text-align: left;
+}
+
+#ubwrxtjckp .gt_center {
+  text-align: center;
+}
+
+#ubwrxtjckp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ubwrxtjckp .gt_font_normal {
+  font-weight: normal;
+}
+
+#ubwrxtjckp .gt_font_bold {
+  font-weight: bold;
+}
+
+#ubwrxtjckp .gt_font_italic {
+  font-style: italic;
+}
+
+#ubwrxtjckp .gt_super {
+  font-size: 65%;
+}
+
+#ubwrxtjckp .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="ubwrxtjckp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="2" class="gt_heading gt_title gt_font_normal" style>The lowest overall scores</th>
+    </tr>
+    <tr>
+      <th colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>2018 data</th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Country</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Score</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left">QATAR</td>
+      <td class="gt_row gt_right">2.07</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">BELARUS</td>
+      <td class="gt_row gt_right">2.30</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">ZIMBABWE</td>
+      <td class="gt_row gt_right">2.55</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">VENEZUELA</td>
+      <td class="gt_row gt_right">2.56</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">NEPAL</td>
+      <td class="gt_row gt_right">2.60</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">ECUADOR</td>
+      <td class="gt_row gt_right">2.70</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">VIETNAM</td>
+      <td class="gt_row gt_right">2.71</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">TURKEY</td>
+      <td class="gt_row gt_right">2.73</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">EGYPT</td>
+      <td class="gt_row gt_right">2.75</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">TAIWAN</td>
+      <td class="gt_row gt_right">2.75</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+
+]
+
+
+---
+
+
+class: inverse, center, middle
+
+#  Assignment
+
+1. ### Form a group of 3 or 4 and choose a non-profit organization of your choice. Determine its vision and mission statements.
+
+2. ### Make a PEST Analysis for a non-profit organization of your choice. You have 15mn. 
+
+### One group will be chosen randomly to make a presentation 🤣
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
