@@ -1,9 +1,9 @@
 ---
-title: "Presentation Ninja"
-subtitle: "⚔<br/>with xaringan"
-author: "Yihui Xie"
-institute: "RStudio, PBC"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+title: "NGOs Fundraising"
+subtitle: ""
+author: "Mohamed El Fodil Ihaddaden"
+institute: "PhD candidate in Economics"
+date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -14,6 +14,21 @@ output:
     css: [default, chocolate, chocolate-fonts]
 ---
 
+class: inverse, middle
+
+
+# Content
+------------------------------
+
++ ### Introduction to Nonprofit Organizations
++ ### Non-governemental Organizations 
++ ### Fundraising Principles
++ ### Fundraising Planning 
+  + ### Fundraising Audit 
+     
+
+
+---
 
 class: inverse, center, middle
 
@@ -24,9 +39,16 @@ class: inverse, center, middle
 ### Introduction to Nonprofit Organizations 
 -------------------------------------------
 
+```{r, include=FALSE}
+library(tidyverse)
+
+```
+
+
 <center>
 
 ```{r, echo = FALSE}
+
 library(DiagrammeR)
 grViz("
 digraph boxes_and_circles  {
@@ -64,6 +86,7 @@ Society -> Nonprofit
 }")
 
 ```
+
 
 
 ---
@@ -210,7 +233,7 @@ DiagrammeR::grViz("digraph {
   
   node [shape = rectangle, style = filled]        
   rec1 [label = 'Nonprofit Sector', fillcolor = MediumSpringGreen]
-  rec2 [label = 'Prohibition of Profit Distribution', fillcolor = red]
+  rec2 [label = 'Prohibition of Profit Distribution', fillcolor = Honeydew, shape = oval]
   
   
   # edge definitions with the node IDs
@@ -239,8 +262,8 @@ DiagrammeR::grViz("digraph {
   
   node [shape = rectangle, style = filled]        
   rec1 [label = 'Nonprofit Sector', fillcolor = MediumSpringGreen]
-  rec2 [label = 'Prohibition of Profit Distribution', fillcolor = red]
-  rec3 [label = 'Serve a Public Purpose', fillcolor = Honeydew]
+  rec2 [label = 'Prohibition of Profit Distribution', fillcolor = Honeydew, shape = oval]
+  rec3 [label = 'Serve a Public Purpose', fillcolor = Honeydew, shape = oval]
 
   
   # edge definitions with the node IDs
@@ -273,6 +296,39 @@ DiagrammeR::grViz("digraph {
   rec2 [label = 'Prohibition of Profit Distribution', fillcolor = Honeydew, shape = oval ]
   rec3 [label = 'Serve a Public Purpose', fillcolor = Honeydew, shape = oval]
   rec4 [label = 'Volunteering', fillcolor = Honeydew, shape = oval]
+
+
+
+  
+  # edge definitions with the node IDs
+  
+  edge [arrowhead = none]
+  
+  rec1 -> rec2  -> rec3 -> rec4 
+  }", 
+  height = 500)
+```
+
+
+---
+
+### Introduction to Nonprofit Organizations
+-------------------------------------------
+
+
+<center>
+
+
+
+```{r, echo=FALSE}
+DiagrammeR::grViz("digraph {
+  graph [layout = dot, rankdir = TB]
+  
+  node [shape = rectangle, style = filled]        
+  rec1 [label = 'Nonprofit Sector', fillcolor = MediumSpringGreen]
+  rec2 [label = 'Prohibition of Profit Distribution', fillcolor = Honeydew, shape = oval ]
+  rec3 [label = 'Serve a Public Purpose', fillcolor = Honeydew, shape = oval]
+  rec4 [label = 'Volunteering', fillcolor = Honeydew, shape = oval]
   rec5 [label = 'Private', fillcolor = Honeydew, shape = oval]
 
 
@@ -286,6 +342,10 @@ DiagrammeR::grViz("digraph {
   }", 
   height = 500)
 ```
+
+
+
+
 
 
 ---
@@ -328,12 +388,28 @@ https://www.un.org/en/sections/un-charter/chapter-x/index.html
 ---
 
 # Characteristics of NGOs
+--------------------------
 
 + ### Non-profit oriented
 + ### Government independent 
 + ### Supported by volunteering
 + ### Structured Established organizations (not ephemeral or informal)
 + ### Non-violent
+
+---
+# Characteristics of NGOs
+--------------------------
+
+
+
+
++ ### NGOs seeks civil society support and media awareness in order to influence state politics 
+
+--
+
+
++ ### They do not seek political power directly.
+
 
 ---
 
@@ -370,7 +446,7 @@ class: inverse, center, middle
 ---
 # What is Fundraising ?
 
-> ## Fundraising is a pocess that aims to collect and distribute wealth in order to have a positive sustainable impact on a public cause. 
+> ## Fundraising is a process that aims to collect and distribute wealth in order to have a positive sustainable impact on a public cause. 
 
 
 
@@ -500,7 +576,7 @@ graph TB
   B--> C(How to get there ?)
 
   
-")
+", height = 500)
 
 ```
 
@@ -522,7 +598,7 @@ graph TB
   
   A(Where are we now ?) --> C(Vision Statement)
   
-")
+", height = 500)
 
 ```
 
@@ -545,6 +621,13 @@ graph TB
  + ###Why does the organization exist ? 
  + ###Whom does it serve ?
  + ###What is the geographic range of its work ? 
+
+---
+# The Mission Statement
+
+
++ ##The Mission Statement must be formulated in a way that enables the organization to measure and evaluate its achievements. 
+
 
 
 ---
@@ -575,7 +658,7 @@ graph TB
 
 <center> 
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width=700}
 
 
 DiagrammeR::mermaid("
@@ -594,16 +677,13 @@ graph TB
 
 # The Fundraising Audit 
 -------------------------------------
-## Macro Factors
-
 <center> 
 
-```{r, echo=FALSE}
-
+```{r, echo=FALSE, out.width=700}
 
 DiagrammeR::mermaid("
-graph LR
-  A[PEST Analysis] --- B{Political factors} --- C{Economic factors} --- D{Sociocultural factors} --- E{Technological factors}
+graph TB
+  A[PEST Analysis] --- B(Political factors) --- C(Economic factors) --- D(Sociocultural factors) --- E(Technological factors)
 ")
 
 ```
@@ -647,9 +727,50 @@ gt(final_data[1:10, ]) %>% tab_header(title = "The lowest overall scores", subti
 
 ]
 
+---
+
+# The Fundraising Audit 
+-------------------------------------
+
+<center> 
+```{r, echo=FALSE, out.width=700}
+
+DiagrammeR::mermaid("
+graph TB
+  A[Competitor Analysis] --- B[Industry Leaders] 
+  
+  A --- C[NGOs serving the same cause]
+  
+  A --- D[NGOs of similar size]
+  
+  
+  
+")
+
+```
+
+
 
 ---
 
+
+# How to gather information ? 
+
+--
+
++ ### The Mystery Shopping 
+
+--
+
++ ### Networking Events
+
+
+
+
+
+
+
+---
 
 class: inverse, center, middle
 
